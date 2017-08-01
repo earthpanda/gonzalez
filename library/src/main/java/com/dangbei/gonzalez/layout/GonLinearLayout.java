@@ -37,8 +37,8 @@ public class GonLinearLayout extends LinearLayout implements IGonView {
 
     @Override
     public void setLayoutParams(ViewGroup.LayoutParams params) {
+        delegate.setLayoutParams(params);
         super.setLayoutParams(params);
-        delegate.setLayoutParams();
     }
 
     @Override

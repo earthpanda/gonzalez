@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Created by guoxiaodong on 2017/8/1
  */
 public class GonViewDelegate implements IGonView {
-    private static final int GON_NO_VALUE = -9999;
+    private static final int GON_NO_VALUE = Integer.MIN_VALUE;
     private View view;
     private GonScreenAdapter adapter;
 
@@ -64,9 +64,15 @@ public class GonViewDelegate implements IGonView {
         typedArray.recycle();
     }
 
-    public void setLayoutParams() {
-        setGonSize(gonWidth, gonHeight);
-        setGonMargin(gonMarginLeft, gonMarginTop, gonMarginRight, gonMarginBottom);
+    public void setLayoutParams(ViewGroup.LayoutParams params) {
+        setGonWidth(params, gonWidth);
+        setGonHeight(params, gonHeight);
+
+        setGonMarginLeft(params, gonMarginLeft);
+        setGonMarginTop(params, gonMarginTop);
+        setGonMarginRight(params, gonMarginRight);
+        setGonMarginBottom(params, gonMarginBottom);
+
         setGonPadding(gonPaddingLeft, gonPaddingTop, gonPaddingRight, gonPaddingBottom);
 
         if (view instanceof TextView) {
@@ -85,13 +91,16 @@ public class GonViewDelegate implements IGonView {
 
     @Override
     public void setGonWidth(int width) {
+        setGonWidth(view.getLayoutParams(), width);
+    }
+
+    public void setGonWidth(ViewGroup.LayoutParams params, int width) {
         if (width == GON_NO_VALUE) {
             return;
         }
         if (GonScreenAdapter.WRAP != width && GonScreenAdapter.MATCH != width) {
             width = adapter.scaleX(width);
         }
-        ViewGroup.LayoutParams params = view.getLayoutParams();
         if (params != null) {
             params.width = width;
         }
@@ -99,13 +108,16 @@ public class GonViewDelegate implements IGonView {
 
     @Override
     public void setGonHeight(int height) {
+        setGonHeight(view.getLayoutParams(), height);
+    }
+
+    public void setGonHeight(ViewGroup.LayoutParams params, int height) {
         if (height == GON_NO_VALUE) {
             return;
         }
         if (GonScreenAdapter.WRAP != height && GonScreenAdapter.MATCH != height) {
             height = adapter.scaleY(height);
         }
-        ViewGroup.LayoutParams params = view.getLayoutParams();
         if (params != null) {
             params.height = height;
         }
@@ -161,57 +173,57 @@ public class GonViewDelegate implements IGonView {
 
     @Override
     public void setGonMarginLeft(int marginLeft) {
+        setGonMarginLeft(view.getLayoutParams(), marginLeft);
+    }
+
+    private void setGonMarginLeft(ViewGroup.LayoutParams params, int marginLeft) {
         if (marginLeft == GON_NO_VALUE) {
             return;
         }
-        ViewGroup.MarginLayoutParams params = null;
-        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        }
-        if (params != null) {
-            params.leftMargin = adapter.scaleX(marginLeft);
+        if (params != null && params instanceof ViewGroup.MarginLayoutParams) {
+            ((ViewGroup.MarginLayoutParams) params).leftMargin = adapter.scaleX(marginLeft);
         }
     }
 
     @Override
     public void setGonMarginTop(int marginTop) {
+        setGonMarginTop(view.getLayoutParams(), marginTop);
+    }
+
+    private void setGonMarginTop(ViewGroup.LayoutParams params, int marginTop) {
         if (marginTop == GON_NO_VALUE) {
             return;
         }
-        ViewGroup.MarginLayoutParams params = null;
-        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        }
-        if (params != null) {
-            params.topMargin = adapter.scaleY(marginTop);
+        if (params != null && params instanceof ViewGroup.MarginLayoutParams) {
+            ((ViewGroup.MarginLayoutParams) params).topMargin = adapter.scaleY(marginTop);
         }
     }
 
     @Override
     public void setGonMarginRight(int marginRight) {
+        setGonMarginRight(view.getLayoutParams(), marginRight);
+    }
+
+    private void setGonMarginRight(ViewGroup.LayoutParams params, int marginRight) {
         if (marginRight == GON_NO_VALUE) {
             return;
         }
-        ViewGroup.MarginLayoutParams params = null;
-        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        }
-        if (params != null) {
-            params.rightMargin = adapter.scaleX(marginRight);
+        if (params != null && params instanceof ViewGroup.MarginLayoutParams) {
+            ((ViewGroup.MarginLayoutParams) params).rightMargin = adapter.scaleX(marginRight);
         }
     }
 
     @Override
     public void setGonMarginBottom(int marginBottom) {
+        setGonMarginBottom(view.getLayoutParams(), marginBottom);
+    }
+
+    private void setGonMarginBottom(ViewGroup.LayoutParams params, int marginBottom) {
         if (marginBottom == GON_NO_VALUE) {
             return;
         }
-        ViewGroup.MarginLayoutParams params = null;
-        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        }
-        if (params != null) {
-            params.bottomMargin = adapter.scaleY(marginBottom);
+        if (params != null && params instanceof ViewGroup.MarginLayoutParams) {
+            ((ViewGroup.MarginLayoutParams) params).bottomMargin = adapter.scaleY(marginBottom);
         }
     }
 
