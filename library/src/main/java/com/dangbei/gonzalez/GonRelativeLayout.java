@@ -3,23 +3,23 @@ package com.dangbei.gonzalez;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 /**
- * Created by guoxiaodong on 2017/7/28
+ * Created by guoxiaodong on 2017/8/1
  */
-public class GonTextView extends TextView implements IGonView {
+public class GonRelativeLayout extends RelativeLayout implements IGonView {
     private GonViewDelegate delegate;
 
-    public GonTextView(Context context) {
+    public GonRelativeLayout(Context context) {
         this(context, null);
     }
 
-    public GonTextView(Context context, AttributeSet attrs) {
+    public GonRelativeLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public GonTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public GonRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
         delegate.initAttributes(context, attrs);

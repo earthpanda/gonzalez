@@ -2,30 +2,24 @@ package com.dangbei.gonzalez;
 
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class GonScreenAdapter {
-    private boolean isReset = false;
-
-    private static class Holder {
-        private static GonScreenAdapter instance = new GonScreenAdapter();
-    }
-
-    public static GonScreenAdapter getInstance() {
-        return Holder.instance;
-    }
-
     public static final int WRAP = RelativeLayout.LayoutParams.WRAP_CONTENT;
     public static final int MATCH = RelativeLayout.LayoutParams.MATCH_PARENT;
     private final int defaultWidth = 1920;
     private final int defaultHeight = 1080;
+    private boolean isReset = false;
     private int screenWidth;
     private int screenHeight;
     private float scaledDensity;
 
     private GonScreenAdapter() {
+    }
+
+    public static GonScreenAdapter getInstance() {
+        return Holder.instance;
     }
 
     public void reset(DisplayMetrics displayMetrics) {
@@ -45,42 +39,6 @@ public class GonScreenAdapter {
             float txtSize = size / Math.min(defaultWidth, defaultHeight) * Math.min(screenWidth, screenHeight) / scaledDensity;
             ((TextView) v).setTextSize(txtSize);
         }
-    }
-
-    /**
-     * 控件适配(动态添加的控件要先自己添加LayoutParams)
-     */
-    public void scaleView(View v, int w, int h, int l, int t, int r, int b) {
-        if (WRAP != w && MATCH != w) {
-            w = scaleX(w);
-        }
-        if (WRAP != h && MATCH != h) {
-            h = scaleY(h);
-        }
-        l = scaleX(l);
-        t = scaleY(t);
-        r = scaleX(r);
-        b = scaleY(b);
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
-        if (params != null) {
-            params.width = w;
-            params.height = h;
-            params.setMargins(l, t, r, b);
-        }
-    }
-
-    /**
-     * 控件适配(动态添加的控件要先自己添加LayoutParams)
-     */
-    public void scaleView(View v, int w, int h, int l, int t) {
-        scaleView(v, w, h, l, t, 0, 0);
-    }
-
-    /**
-     * 控件适配(动态添加的控件要先自己添加LayoutParams)
-     */
-    public void scaleView(View v, int w, int h) {
-        scaleView(v, w, h, 0, 0);
     }
 
     /**
@@ -107,6 +65,10 @@ public class GonScreenAdapter {
         }
 
         return scaleY;
+    }
+
+    private static class Holder {
+        private static GonScreenAdapter instance = new GonScreenAdapter();
     }
 
 }
