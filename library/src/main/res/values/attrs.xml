@@ -2,11 +2,14 @@
     <declare-styleable name="GonView">
         <attr name="gon_layout_width" format="integer"/>
         <attr name="gon_layout_height" format="integer"/>
+
+        <attr name="gon_padding" format="integer"/>
         <attr name="gon_paddingLeft" format="integer"/>
         <attr name="gon_paddingTop" format="integer"/>
         <attr name="gon_paddingRight" format="integer"/>
         <attr name="gon_paddingBottom" format="integer"/>
 
+        <attr name="gon_margin" format="integer"/>
         <attr name="gon_layout_marginLeft" format="integer"/>
         <attr name="gon_layout_marginTop" format="integer"/>
         <attr name="gon_layout_marginRight" format="integer"/>
@@ -16,5 +19,225 @@
 
         <attr name="gon_horizontalDrawablePadding" format="integer"/>
         <attr name="gon_verticalDrawablePadding" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonButton">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonImageButton">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonImageView">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonProgressBar">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonSeekBar">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonTextView">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonFrameLayout">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonLinearLayout">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonRelativeLayout">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
+    </declare-styleable>
+
+    <declare-styleable name="GonViewGroup">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+
+        <attr name="gon_horizontalDrawablePadding"/>
+        <attr name="gon_verticalDrawablePadding"/>
     </declare-styleable>
 </resources>

@@ -47,15 +47,19 @@ public class GonViewDelegate implements IGonView {
         gonWidth = typedArray.getInt(R.styleable.GonView_gon_layout_width, GON_NO_VALUE);
         gonHeight = typedArray.getInt(R.styleable.GonView_gon_layout_height, GON_NO_VALUE);
 
-        gonPaddingLeft = typedArray.getInt(R.styleable.GonView_gon_paddingLeft, GON_NO_VALUE);
-        gonPaddingTop = typedArray.getInt(R.styleable.GonView_gon_paddingTop, GON_NO_VALUE);
-        gonPaddingRight = typedArray.getInt(R.styleable.GonView_gon_paddingRight, GON_NO_VALUE);
-        gonPaddingBottom = typedArray.getInt(R.styleable.GonView_gon_paddingBottom, GON_NO_VALUE);
+        int padding = typedArray.getInt(R.styleable.GonView_gon_padding, GON_NO_VALUE);
 
-        gonMarginLeft = typedArray.getInt(R.styleable.GonView_gon_layout_marginLeft, GON_NO_VALUE);
-        gonMarginTop = typedArray.getInt(R.styleable.GonView_gon_layout_marginTop, GON_NO_VALUE);
-        gonMarginRight = typedArray.getInt(R.styleable.GonView_gon_layout_marginRight, GON_NO_VALUE);
-        gonMarginBottom = typedArray.getInt(R.styleable.GonView_gon_layout_marginBottom, GON_NO_VALUE);
+        gonPaddingLeft = typedArray.getInt(R.styleable.GonView_gon_paddingLeft, padding);
+        gonPaddingTop = typedArray.getInt(R.styleable.GonView_gon_paddingTop, padding);
+        gonPaddingRight = typedArray.getInt(R.styleable.GonView_gon_paddingRight, padding);
+        gonPaddingBottom = typedArray.getInt(R.styleable.GonView_gon_paddingBottom, padding);
+
+        int margin = typedArray.getInt(R.styleable.GonView_gon_margin, GON_NO_VALUE);
+
+        gonMarginLeft = typedArray.getInt(R.styleable.GonView_gon_layout_marginLeft, margin);
+        gonMarginTop = typedArray.getInt(R.styleable.GonView_gon_layout_marginTop, margin);
+        gonMarginRight = typedArray.getInt(R.styleable.GonView_gon_layout_marginRight, margin);
+        gonMarginBottom = typedArray.getInt(R.styleable.GonView_gon_layout_marginBottom, margin);
 
         gonTextSize = typedArray.getInt(R.styleable.GonView_gon_textSize, GON_NO_VALUE);
 
