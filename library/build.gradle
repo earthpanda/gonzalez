@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion global_compileSdkVersion
+    buildToolsVersion global_buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 25
+        minSdkVersion global_minSdkVersion
+        targetSdkVersion global_targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -19,5 +19,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-annotations:25.0.0'
+    compile "com.android.support:support-annotations:$global_supportVersion"
 }
+
+apply from: 'nexus_aar_db.gradle'
