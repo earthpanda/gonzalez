@@ -1,0 +1,7 @@
+<resources>
+    <declare-styleable name="GonTextView">
+        <attr name="gon_layout_width" format="integer"/>
+        <attr name="gon_layout_height" format="integer"/>
+        <attr name="android:layout_width"/>
+    </declare-styleable>
+</resources>
