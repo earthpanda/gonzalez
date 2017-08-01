@@ -53,7 +53,7 @@ uploadArchives {
             snapshotRepository(url: "http://nexus.dangbei.net/nexus/content/repositories/snapshots/") {
                 authentication(userName: getParameter('ossrhUsername'), password: getParameter('ossrhPassword'))
             }
-            
+
             pom.project {
                 artifactId "$archiveName"
                 name "$archiveName"

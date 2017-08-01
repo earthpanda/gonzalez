@@ -62,8 +62,48 @@ public class GonImageButton extends ImageButton implements IGonView {
     }
 
     @Override
+    public void setGonPaddingLeft(int paddingLeft) {
+        delegate.setGonPaddingLeft(paddingLeft);
+    }
+
+    @Override
+    public void setGonPaddingTop(int paddingTop) {
+        delegate.setGonPaddingTop(paddingTop);
+    }
+
+    @Override
+    public void setGonPaddingRight(int paddingRight) {
+        delegate.setGonPaddingRight(paddingRight);
+    }
+
+    @Override
+    public void setGonPaddingBottom(int paddingBottom) {
+        delegate.setGonPaddingBottom(paddingBottom);
+    }
+
+    @Override
     public void setGonMargin(int left, int top, int right, int bottom) {
         delegate.setGonMargin(left, top, right, bottom);
+    }
+
+    @Override
+    public void setGonMarginLeft(int marginLeft) {
+        delegate.setGonMarginLeft(marginLeft);
+    }
+
+    @Override
+    public void setGonMarginTop(int marginTop) {
+        delegate.setGonMarginTop(marginTop);
+    }
+
+    @Override
+    public void setGonMarginRight(int marginRight) {
+        delegate.setGonPaddingRight(marginRight);
+    }
+
+    @Override
+    public void setGonMarginBottom(int marginBottom) {
+        delegate.setGonMarginBottom(marginBottom);
     }
 
     @Override

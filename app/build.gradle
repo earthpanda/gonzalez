@@ -20,5 +20,6 @@ android {
 
 dependencies {
     compile "com.android.support:appcompat-v7:$global_supportVersion"
+//    compile "com.dangbei:gonzalez:1.0.1-SNAPSHOT"
     compile project(':library')
 }

@@ -1,7 +1,6 @@
 package com.dangbei.gonzalez.view;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -20,13 +19,13 @@ public class GonTextView extends TextView implements IGonView {
         init();
     }
 
-    public GonTextView(Context context, @Nullable AttributeSet attrs) {
+    public GonTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
         delegate.initAttributes(context, attrs);
     }
 
-    public GonTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public GonTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
         delegate.initAttributes(context, attrs);
@@ -63,8 +62,48 @@ public class GonTextView extends TextView implements IGonView {
     }
 
     @Override
+    public void setGonPaddingLeft(int paddingLeft) {
+        delegate.setGonPaddingLeft(paddingLeft);
+    }
+
+    @Override
+    public void setGonPaddingTop(int paddingTop) {
+        delegate.setGonPaddingTop(paddingTop);
+    }
+
+    @Override
+    public void setGonPaddingRight(int paddingRight) {
+        delegate.setGonPaddingRight(paddingRight);
+    }
+
+    @Override
+    public void setGonPaddingBottom(int paddingBottom) {
+        delegate.setGonPaddingBottom(paddingBottom);
+    }
+
+    @Override
     public void setGonMargin(int left, int top, int right, int bottom) {
         delegate.setGonMargin(left, top, right, bottom);
+    }
+
+    @Override
+    public void setGonMarginLeft(int marginLeft) {
+        delegate.setGonMarginLeft(marginLeft);
+    }
+
+    @Override
+    public void setGonMarginTop(int marginTop) {
+        delegate.setGonMarginTop(marginTop);
+    }
+
+    @Override
+    public void setGonMarginRight(int marginRight) {
+        delegate.setGonPaddingRight(marginRight);
+    }
+
+    @Override
+    public void setGonMarginBottom(int marginBottom) {
+        delegate.setGonMarginBottom(marginBottom);
     }
 
     @Override

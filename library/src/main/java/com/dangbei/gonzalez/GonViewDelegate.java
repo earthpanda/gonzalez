@@ -11,6 +11,7 @@ import android.widget.TextView;
  * Created by guoxiaodong on 2017/8/1
  */
 public class GonViewDelegate implements IGonView {
+    private static final int GON_NO_VALUE = -9999;
     private View view;
     private GonScreenAdapter adapter;
 
@@ -42,23 +43,23 @@ public class GonViewDelegate implements IGonView {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.GonView);
 
-        gonWidth = typedArray.getInt(R.styleable.GonView_gon_layout_width, 0);
-        gonHeight = typedArray.getInt(R.styleable.GonView_gon_layout_height, 0);
+        gonWidth = typedArray.getInt(R.styleable.GonView_gon_layout_width, GON_NO_VALUE);
+        gonHeight = typedArray.getInt(R.styleable.GonView_gon_layout_height, GON_NO_VALUE);
 
-        gonPaddingLeft = typedArray.getInt(R.styleable.GonView_gon_paddingLeft, 0);
-        gonPaddingTop = typedArray.getInt(R.styleable.GonView_gon_paddingTop, 0);
-        gonPaddingRight = typedArray.getInt(R.styleable.GonView_gon_paddingRight, 0);
-        gonPaddingBottom = typedArray.getInt(R.styleable.GonView_gon_paddingBottom, 0);
+        gonPaddingLeft = typedArray.getInt(R.styleable.GonView_gon_paddingLeft, GON_NO_VALUE);
+        gonPaddingTop = typedArray.getInt(R.styleable.GonView_gon_paddingTop, GON_NO_VALUE);
+        gonPaddingRight = typedArray.getInt(R.styleable.GonView_gon_paddingRight, GON_NO_VALUE);
+        gonPaddingBottom = typedArray.getInt(R.styleable.GonView_gon_paddingBottom, GON_NO_VALUE);
 
-        gonMarginLeft = typedArray.getInt(R.styleable.GonView_gon_layout_marginLeft, 0);
-        gonMarginTop = typedArray.getInt(R.styleable.GonView_gon_layout_marginTop, 0);
-        gonMarginRight = typedArray.getInt(R.styleable.GonView_gon_layout_marginRight, 0);
-        gonMarginBottom = typedArray.getInt(R.styleable.GonView_gon_layout_marginBottom, 0);
+        gonMarginLeft = typedArray.getInt(R.styleable.GonView_gon_layout_marginLeft, GON_NO_VALUE);
+        gonMarginTop = typedArray.getInt(R.styleable.GonView_gon_layout_marginTop, GON_NO_VALUE);
+        gonMarginRight = typedArray.getInt(R.styleable.GonView_gon_layout_marginRight, GON_NO_VALUE);
+        gonMarginBottom = typedArray.getInt(R.styleable.GonView_gon_layout_marginBottom, GON_NO_VALUE);
 
-        gonTextSize = typedArray.getInt(R.styleable.GonView_gon_textSize, 0);
+        gonTextSize = typedArray.getInt(R.styleable.GonView_gon_textSize, GON_NO_VALUE);
 
-        horizontalDrawablePadding = typedArray.getInt(R.styleable.GonView_gon_horizontalDrawablePadding, 0);
-        verticalDrawablePadding = typedArray.getInt(R.styleable.GonView_gon_verticalDrawablePadding, 0);
+        horizontalDrawablePadding = typedArray.getInt(R.styleable.GonView_gon_horizontalDrawablePadding, GON_NO_VALUE);
+        verticalDrawablePadding = typedArray.getInt(R.styleable.GonView_gon_verticalDrawablePadding, GON_NO_VALUE);
 
         typedArray.recycle();
     }
@@ -69,38 +70,24 @@ public class GonViewDelegate implements IGonView {
         setGonPadding(gonPaddingLeft, gonPaddingTop, gonPaddingRight, gonPaddingBottom);
 
         if (view instanceof TextView) {
-            adapter.scaleTextSize(view, gonTextSize);
-
-            int drawablePadding = 0;
-            if (horizontalDrawablePadding != -1) {
-                drawablePadding = adapter.scaleX(horizontalDrawablePadding);
-            } else if (verticalDrawablePadding != -1) {
-                drawablePadding = adapter.scaleY(verticalDrawablePadding);
-            }
-            if (drawablePadding != 0) {
-                ((TextView) view).setCompoundDrawablePadding(drawablePadding);
-            }
+            setGonTextSize(gonTextSize);
+            setHorizontalCompoundDrawablePadding(horizontalDrawablePadding);
+            setVerticalCompoundDrawablePadding(verticalDrawablePadding);
         }
     }
 
 
     @Override
     public void setGonSize(int width, int height) {
-        if (GonScreenAdapter.WRAP != width && GonScreenAdapter.MATCH != width) {
-            width = adapter.scaleX(width);
-        }
-        if (GonScreenAdapter.WRAP != height && GonScreenAdapter.MATCH != height) {
-            height = adapter.scaleY(height);
-        }
-        ViewGroup.LayoutParams params = view.getLayoutParams();
-        if (params != null) {
-            params.width = width;
-            params.height = height;
-        }
+        setGonWidth(width);
+        setGonHeight(height);
     }
 
     @Override
     public void setGonWidth(int width) {
+        if (width == GON_NO_VALUE) {
+            return;
+        }
         if (GonScreenAdapter.WRAP != width && GonScreenAdapter.MATCH != width) {
             width = adapter.scaleX(width);
         }
@@ -112,6 +99,9 @@ public class GonViewDelegate implements IGonView {
 
     @Override
     public void setGonHeight(int height) {
+        if (height == GON_NO_VALUE) {
+            return;
+        }
         if (GonScreenAdapter.WRAP != height && GonScreenAdapter.MATCH != height) {
             height = adapter.scaleY(height);
         }
@@ -123,22 +113,113 @@ public class GonViewDelegate implements IGonView {
 
     @Override
     public void setGonPadding(int left, int top, int right, int bottom) {
-        view.setPadding(adapter.scaleX(left), adapter.scaleY(top), adapter.scaleX(right), adapter.scaleY(bottom));
+        setGonPaddingLeft(left);
+        setGonPaddingTop(top);
+        setGonPaddingRight(right);
+        setGonPaddingBottom(bottom);
+    }
+
+    @Override
+    public void setGonPaddingLeft(int paddingLeft) {
+        if (paddingLeft == GON_NO_VALUE) {
+            return;
+        }
+        view.setPadding(adapter.scaleX(paddingLeft), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+    }
+
+    @Override
+    public void setGonPaddingTop(int paddingTop) {
+        if (paddingTop == GON_NO_VALUE) {
+            return;
+        }
+        view.setPadding(view.getPaddingLeft(), adapter.scaleY(paddingTop), view.getPaddingRight(), view.getPaddingBottom());
+    }
+
+    @Override
+    public void setGonPaddingRight(int paddingRight) {
+        if (paddingRight == GON_NO_VALUE) {
+            return;
+        }
+        view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), adapter.scaleX(paddingRight), view.getPaddingBottom());
+    }
+
+    @Override
+    public void setGonPaddingBottom(int paddingBottom) {
+        if (paddingBottom == GON_NO_VALUE) {
+            return;
+        }
+        view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), adapter.scaleY(paddingBottom));
     }
 
     @Override
     public void setGonMargin(int left, int top, int right, int bottom) {
+        setGonMarginLeft(left);
+        setGonMarginTop(top);
+        setGonMarginRight(right);
+        setGonMarginBottom(bottom);
+    }
+
+    @Override
+    public void setGonMarginLeft(int marginLeft) {
+        if (marginLeft == GON_NO_VALUE) {
+            return;
+        }
         ViewGroup.MarginLayoutParams params = null;
         if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         }
         if (params != null) {
-            params.setMargins(adapter.scaleX(left), adapter.scaleY(top), adapter.scaleX(right), adapter.scaleY(bottom));
+            params.leftMargin = adapter.scaleX(marginLeft);
+        }
+    }
+
+    @Override
+    public void setGonMarginTop(int marginTop) {
+        if (marginTop == GON_NO_VALUE) {
+            return;
+        }
+        ViewGroup.MarginLayoutParams params = null;
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        }
+        if (params != null) {
+            params.topMargin = adapter.scaleY(marginTop);
+        }
+    }
+
+    @Override
+    public void setGonMarginRight(int marginRight) {
+        if (marginRight == GON_NO_VALUE) {
+            return;
+        }
+        ViewGroup.MarginLayoutParams params = null;
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        }
+        if (params != null) {
+            params.rightMargin = adapter.scaleX(marginRight);
+        }
+    }
+
+    @Override
+    public void setGonMarginBottom(int marginBottom) {
+        if (marginBottom == GON_NO_VALUE) {
+            return;
+        }
+        ViewGroup.MarginLayoutParams params = null;
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        }
+        if (params != null) {
+            params.bottomMargin = adapter.scaleY(marginBottom);
         }
     }
 
     @Override
     public void setGonTextSize(int textSize) {
+        if (textSize == GON_NO_VALUE) {
+            return;
+        }
         if (view instanceof TextView) {
             adapter.scaleTextSize(view, textSize);
         }
@@ -146,6 +227,9 @@ public class GonViewDelegate implements IGonView {
 
     @Override
     public void setHorizontalCompoundDrawablePadding(int padding) {
+        if (padding == GON_NO_VALUE) {
+            return;
+        }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleX(padding));
         }
@@ -153,6 +237,9 @@ public class GonViewDelegate implements IGonView {
 
     @Override
     public void setVerticalCompoundDrawablePadding(int padding) {
+        if (padding == GON_NO_VALUE) {
+            return;
+        }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleY(padding));
         }

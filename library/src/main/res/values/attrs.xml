@@ -2,7 +2,6 @@
     <declare-styleable name="GonView">
         <attr name="gon_layout_width" format="integer"/>
         <attr name="gon_layout_height" format="integer"/>
-
         <attr name="gon_paddingLeft" format="integer"/>
         <attr name="gon_paddingTop" format="integer"/>
         <attr name="gon_paddingRight" format="integer"/>
