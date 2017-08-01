@@ -2,14 +2,20 @@
     <declare-styleable name="GonView">
         <attr name="gon_layout_width" format="integer"/>
         <attr name="gon_layout_height" format="integer"/>
+
         <attr name="gon_paddingLeft" format="integer"/>
         <attr name="gon_paddingTop" format="integer"/>
         <attr name="gon_paddingRight" format="integer"/>
         <attr name="gon_paddingBottom" format="integer"/>
+
         <attr name="gon_layout_marginLeft" format="integer"/>
         <attr name="gon_layout_marginTop" format="integer"/>
         <attr name="gon_layout_marginRight" format="integer"/>
         <attr name="gon_layout_marginBottom" format="integer"/>
+
         <attr name="gon_textSize" format="integer"/>
+
+        <attr name="gon_horizontalDrawablePadding" format="integer"/>
+        <attr name="gon_verticalDrawablePadding" format="integer"/>
     </declare-styleable>
 </resources>

@@ -34,7 +34,7 @@ public class GonScreenAdapter {
     /**
      * 字体适配(只适配TextView及TextView的子类)
      */
-    public void scaleTxtSize(View v, float size) {
+    public void scaleTextSize(View v, float size) {
         if (v instanceof TextView) {
             float txtSize = size / Math.min(defaultWidth, defaultHeight) * Math.min(screenWidth, screenHeight) / scaledDensity;
             ((TextView) v).setTextSize(txtSize);

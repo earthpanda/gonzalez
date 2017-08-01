@@ -1,9 +1,12 @@
-package com.dangbei.gonzalez;
+package com.dangbei.gonzalez.layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+
+import com.dangbei.gonzalez.GonViewDelegate;
+import com.dangbei.gonzalez.IGonView;
 
 /**
  * Created by guoxiaodong on 2017/8/1
@@ -12,11 +15,14 @@ public class GonRelativeLayout extends RelativeLayout implements IGonView {
     private GonViewDelegate delegate;
 
     public GonRelativeLayout(Context context) {
-        this(context, null);
+        super(context);
+        init();
     }
 
     public GonRelativeLayout(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        super(context, attrs);
+        init();
+        delegate.initAttributes(context, attrs);
     }
 
     public GonRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -32,12 +38,22 @@ public class GonRelativeLayout extends RelativeLayout implements IGonView {
     @Override
     public void setLayoutParams(ViewGroup.LayoutParams params) {
         super.setLayoutParams(params);
-        delegate.initLayoutParams();
+        delegate.setLayoutParams();
     }
 
     @Override
-    public void setGonWidthHeight(int width, int height) {
-        delegate.setGonWidthHeight(width, height);
+    public void setGonSize(int width, int height) {
+        delegate.setGonSize(width, height);
+    }
+
+    @Override
+    public void setGonWidth(int width) {
+        delegate.setGonWidth(width);
+    }
+
+    @Override
+    public void setGonHeight(int height) {
+        delegate.setGonHeight(height);
     }
 
     @Override
@@ -53,5 +69,15 @@ public class GonRelativeLayout extends RelativeLayout implements IGonView {
     @Override
     public void setGonTextSize(int textSize) {
         delegate.setGonTextSize(textSize);
+    }
+
+    @Override
+    public void setHorizontalCompoundDrawablePadding(int padding) {
+        delegate.setHorizontalCompoundDrawablePadding(padding);
+    }
+
+    @Override
+    public void setVerticalCompoundDrawablePadding(int padding) {
+        delegate.setVerticalCompoundDrawablePadding(padding);
     }
 }
