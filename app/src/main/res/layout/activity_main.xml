@@ -4,6 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.dangbei.gonzalez.view.GonCheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00f"
+        app:gon_layout_height="300"
+        app:gon_layout_margin="100"
+        app:gon_layout_width="300"/>
+
     <com.dangbei.gonzalez.view.GonTextView
         android:id="@+id/gtv"
         android:layout_width="match_parent"

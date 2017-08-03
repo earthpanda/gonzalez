@@ -54,7 +54,7 @@ public class GonViewDelegate implements IGonView {
         gonPaddingRight = typedArray.getInt(R.styleable.GonView_gon_paddingRight, padding);
         gonPaddingBottom = typedArray.getInt(R.styleable.GonView_gon_paddingBottom, padding);
 
-        int margin = typedArray.getInt(R.styleable.GonView_gon_margin, GON_NO_VALUE);
+        int margin = typedArray.getInt(R.styleable.GonView_gon_layout_margin, GON_NO_VALUE);
 
         gonMarginLeft = typedArray.getInt(R.styleable.GonView_gon_layout_marginLeft, margin);
         gonMarginTop = typedArray.getInt(R.styleable.GonView_gon_layout_marginTop, margin);
