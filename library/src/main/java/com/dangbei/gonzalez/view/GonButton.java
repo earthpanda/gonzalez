@@ -1,9 +1,9 @@
 package com.dangbei.gonzalez.view;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.dangbei.gonzalez.GonViewDelegate;
 import com.dangbei.gonzalez.IGonView;
@@ -11,7 +11,7 @@ import com.dangbei.gonzalez.IGonView;
 /**
  * Created by guoxiaodong on 2017/8/1
  */
-public class GonButton extends Button implements IGonView {
+public class GonButton extends AppCompatButton implements IGonView {
     private GonViewDelegate delegate;
 
     public GonButton(Context context) {

@@ -1,7 +1,7 @@
 package com.dangbei.gonzalez.view;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatImageButton;
+import android.support.v7.widget.AppCompatRadioButton;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 
@@ -9,23 +9,23 @@ import com.dangbei.gonzalez.GonViewDelegate;
 import com.dangbei.gonzalez.IGonView;
 
 /**
- * Created by guoxiaodong on 2017/8/1
+ * Created by guoxiaodong on 2017/8/3
  */
-public class GonImageButton extends AppCompatImageButton implements IGonView {
+public class GonRadioButton extends AppCompatRadioButton implements IGonView {
     private GonViewDelegate delegate;
 
-    public GonImageButton(Context context) {
+    public GonRadioButton(Context context) {
         super(context);
         init();
     }
 
-    public GonImageButton(Context context, AttributeSet attrs) {
+    public GonRadioButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
         delegate.initAttributes(context, attrs);
     }
 
-    public GonImageButton(Context context, AttributeSet attrs, int defStyleAttr) {
+    public GonRadioButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
         delegate.initAttributes(context, attrs);

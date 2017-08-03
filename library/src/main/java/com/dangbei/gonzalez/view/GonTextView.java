@@ -1,9 +1,9 @@
 package com.dangbei.gonzalez.view;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.dangbei.gonzalez.GonViewDelegate;
 import com.dangbei.gonzalez.IGonView;
@@ -11,7 +11,7 @@ import com.dangbei.gonzalez.IGonView;
 /**
  * Created by guoxiaodong on 2017/7/28
  */
-public class GonTextView extends TextView implements IGonView {
+public class GonTextView extends AppCompatTextView implements IGonView {
     private GonViewDelegate delegate;
 
     public GonTextView(Context context) {
