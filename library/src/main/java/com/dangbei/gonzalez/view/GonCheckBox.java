@@ -5,14 +5,14 @@ import android.support.v7.widget.AppCompatCheckBox;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 
-import com.dangbei.gonzalez.GonViewDelegate;
 import com.dangbei.gonzalez.IGonView;
+import com.dangbei.gonzalez.delegate.GonTextViewDelegate;
 
 /**
  * Created by guoxiaodong on 2017/8/3
  */
 public class GonCheckBox extends AppCompatCheckBox implements IGonView {
-    private GonViewDelegate delegate;
+    private GonTextViewDelegate delegate;
 
     public GonCheckBox(Context context) {
         super(context);
@@ -32,7 +32,7 @@ public class GonCheckBox extends AppCompatCheckBox implements IGonView {
     }
 
     private void init() {
-        delegate = new GonViewDelegate(this);
+        delegate = new GonTextViewDelegate(this);
     }
 
     @Override

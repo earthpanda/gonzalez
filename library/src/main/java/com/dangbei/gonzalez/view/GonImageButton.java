@@ -5,8 +5,8 @@ import android.support.v7.widget.AppCompatImageButton;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 
-import com.dangbei.gonzalez.GonViewDelegate;
 import com.dangbei.gonzalez.IGonView;
+import com.dangbei.gonzalez.delegate.GonViewDelegate;
 
 /**
  * Created by guoxiaodong on 2017/8/1

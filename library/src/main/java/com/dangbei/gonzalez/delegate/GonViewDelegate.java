@@ -1,4 +1,4 @@
-package com.dangbei.gonzalez;
+package com.dangbei.gonzalez.delegate;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,12 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.dangbei.gonzalez.GonScreenAdapter;
+import com.dangbei.gonzalez.IGonView;
+import com.dangbei.gonzalez.R;
+
 /**
  * Created by guoxiaodong on 2017/8/1
  */
 public class GonViewDelegate implements IGonView {
-    private static final int GON_NO_VALUE = Integer.MIN_VALUE;
-    private View view;
+    protected static final int GON_NO_VALUE = Integer.MIN_VALUE;
+    protected View view;
     private GonScreenAdapter adapter;
 
     private int gonWidth;
@@ -28,11 +32,6 @@ public class GonViewDelegate implements IGonView {
     private int gonMarginTop;
     private int gonMarginRight;
     private int gonMarginBottom;
-
-    private int gonTextSize;
-
-    private int horizontalDrawablePadding;
-    private int verticalDrawablePadding;
 
     public GonViewDelegate(View view) {
         this.view = view;
@@ -61,11 +60,6 @@ public class GonViewDelegate implements IGonView {
         gonMarginRight = typedArray.getInt(R.styleable.GonView_gon_layout_marginRight, margin);
         gonMarginBottom = typedArray.getInt(R.styleable.GonView_gon_layout_marginBottom, margin);
 
-        gonTextSize = typedArray.getInt(R.styleable.GonView_gon_textSize, GON_NO_VALUE);
-
-        horizontalDrawablePadding = typedArray.getInt(R.styleable.GonView_gon_horizontalDrawablePadding, GON_NO_VALUE);
-        verticalDrawablePadding = typedArray.getInt(R.styleable.GonView_gon_verticalDrawablePadding, GON_NO_VALUE);
-
         typedArray.recycle();
     }
 
@@ -82,12 +76,6 @@ public class GonViewDelegate implements IGonView {
         setGonMarginBottom(params, gonMarginBottom);
 
         setGonPadding(gonPaddingLeft, gonPaddingTop, gonPaddingRight, gonPaddingBottom);
-
-        if (view instanceof TextView) {
-            setGonTextSize(gonTextSize);
-            setHorizontalCompoundDrawablePadding(horizontalDrawablePadding);
-            setVerticalCompoundDrawablePadding(verticalDrawablePadding);
-        }
     }
 
 
