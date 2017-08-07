@@ -10,6 +10,8 @@ public interface IGonView {
 
     void setGonHeight(int height);
 
+    void setGonPadding(int padding);
+
     void setGonPadding(int left, int top, int right, int bottom);
 
     void setGonPaddingLeft(int paddingLeft);
@@ -19,6 +21,8 @@ public interface IGonView {
     void setGonPaddingRight(int paddingRight);
 
     void setGonPaddingBottom(int paddingBottom);
+
+    void setGonMargin(int margin);
 
     void setGonMargin(int left, int top, int right, int bottom);
 

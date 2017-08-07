@@ -57,6 +57,11 @@ public class GonButton extends AppCompatButton implements IGonView {
     }
 
     @Override
+    public void setGonPadding(int padding) {
+        delegate.setGonPadding(padding);
+    }
+
+    @Override
     public void setGonPadding(int left, int top, int right, int bottom) {
         delegate.setGonPadding(left, top, right, bottom);
     }
@@ -79,6 +84,11 @@ public class GonButton extends AppCompatButton implements IGonView {
     @Override
     public void setGonPaddingBottom(int paddingBottom) {
         delegate.setGonPaddingBottom(paddingBottom);
+    }
+
+    @Override
+    public void setGonMargin(int margin) {
+        delegate.setGonMargin(margin);
     }
 
     @Override

@@ -20,18 +20,18 @@ public class GonViewDelegate implements IGonView {
     protected View view;
     private GonScreenAdapter adapter;
 
-    private int gonWidth;
-    private int gonHeight;
+    private int gonWidth = GON_NO_VALUE;
+    private int gonHeight = GON_NO_VALUE;
 
-    private int gonPaddingLeft;
-    private int gonPaddingTop;
-    private int gonPaddingRight;
-    private int gonPaddingBottom;
+    private int gonPaddingLeft = GON_NO_VALUE;
+    private int gonPaddingTop = GON_NO_VALUE;
+    private int gonPaddingRight = GON_NO_VALUE;
+    private int gonPaddingBottom = GON_NO_VALUE;
 
-    private int gonMarginLeft;
-    private int gonMarginTop;
-    private int gonMarginRight;
-    private int gonMarginBottom;
+    private int gonMarginLeft = GON_NO_VALUE;
+    private int gonMarginTop = GON_NO_VALUE;
+    private int gonMarginRight = GON_NO_VALUE;
+    private int gonMarginBottom = GON_NO_VALUE;
 
     public GonViewDelegate(View view) {
         this.view = view;
@@ -67,6 +67,18 @@ public class GonViewDelegate implements IGonView {
         if (params == null) {
             throw new NullPointerException("Layout parameters cannot be null");
         }
+
+        if (gonWidth == GON_NO_VALUE
+                && params.width != ViewGroup.LayoutParams.MATCH_PARENT
+                && params.width != ViewGroup.LayoutParams.WRAP_CONTENT) {
+            gonWidth = adapter.scaleX(params.width);
+        }
+        if (gonHeight == GON_NO_VALUE
+                && params.height != ViewGroup.LayoutParams.MATCH_PARENT
+                && params.height != ViewGroup.LayoutParams.WRAP_CONTENT) {
+            gonHeight = adapter.scaleY(params.height);
+        }
+
         setGonWidth(params, gonWidth);
         setGonHeight(params, gonHeight);
 
@@ -109,6 +121,11 @@ public class GonViewDelegate implements IGonView {
         if (params != null) {
             setGonHeight(params, height);
         }
+    }
+
+    @Override
+    public void setGonPadding(int padding) {
+        setGonPadding(padding, padding, padding, padding);
     }
 
     public void setGonHeight(@NonNull ViewGroup.LayoutParams params, int height) {
@@ -159,6 +176,11 @@ public class GonViewDelegate implements IGonView {
             return;
         }
         view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), adapter.scaleY(paddingBottom));
+    }
+
+    @Override
+    public void setGonMargin(int margin) {
+        setGonMargin(margin, margin, margin, margin);
     }
 
     @Override
