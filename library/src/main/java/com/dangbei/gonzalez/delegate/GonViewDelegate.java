@@ -16,7 +16,7 @@ import com.dangbei.gonzalez.R;
  * Created by guoxiaodong on 2017/8/1
  */
 public class GonViewDelegate implements IGonView {
-    protected static final int GON_NO_VALUE = Integer.MIN_VALUE;
+    static final int GON_NO_VALUE = Integer.MIN_VALUE;
     protected View view;
     private GonScreenAdapter adapter;
 
@@ -66,17 +66,6 @@ public class GonViewDelegate implements IGonView {
     public void setLayoutParams(ViewGroup.LayoutParams params) {
         if (params == null) {
             throw new NullPointerException("Layout parameters cannot be null");
-        }
-
-        if (gonWidth == GON_NO_VALUE
-                && params.width != ViewGroup.LayoutParams.MATCH_PARENT
-                && params.width != ViewGroup.LayoutParams.WRAP_CONTENT) {
-            gonWidth = adapter.scaleX(params.width);
-        }
-        if (gonHeight == GON_NO_VALUE
-                && params.height != ViewGroup.LayoutParams.MATCH_PARENT
-                && params.height != ViewGroup.LayoutParams.WRAP_CONTENT) {
-            gonHeight = adapter.scaleY(params.height);
         }
 
         setGonWidth(params, gonWidth);
