@@ -1,6 +1,7 @@
 package com.dangbei.gonzalez;
 
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -36,8 +37,8 @@ public class GonScreenAdapter {
      */
     public void scaleTextSize(View v, float size) {
         if (v instanceof TextView) {
-            float txtSize = size / Math.min(defaultWidth, defaultHeight) * Math.min(screenWidth, screenHeight) / scaledDensity;
-            ((TextView) v).setTextSize(txtSize);
+            int txtSize = (int) (size / defaultHeight * screenHeight);
+            ((TextView) v).setTextSize(TypedValue.COMPLEX_UNIT_PX, txtSize);
         }
     }
 
