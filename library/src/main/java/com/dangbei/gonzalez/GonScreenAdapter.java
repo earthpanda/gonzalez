@@ -14,7 +14,6 @@ public class GonScreenAdapter {
     private boolean isReset = false;
     private int screenWidth;
     private int screenHeight;
-    private float scaledDensity;
 
     private GonScreenAdapter() {
     }
@@ -26,7 +25,6 @@ public class GonScreenAdapter {
     public void reset(DisplayMetrics displayMetrics) {
         if (!isReset) {
             isReset = true;
-            scaledDensity = displayMetrics.scaledDensity;
             screenWidth = displayMetrics.widthPixels;
             screenHeight = displayMetrics.heightPixels == 672 ? 720 : displayMetrics.heightPixels == 1008 ? 1080 : displayMetrics.heightPixels;
         }
