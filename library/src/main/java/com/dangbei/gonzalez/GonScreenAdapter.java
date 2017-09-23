@@ -9,11 +9,11 @@ import android.widget.TextView;
 public class GonScreenAdapter {
     public static final int WRAP = RelativeLayout.LayoutParams.WRAP_CONTENT;
     public static final int MATCH = RelativeLayout.LayoutParams.MATCH_PARENT;
-    private final int defaultWidth = 1920;
-    private final int defaultHeight = 1080;
+    public final int defaultWidth = 1920;
+    public final int defaultHeight = 1080;
     private boolean isReset = false;
-    private int screenWidth;
-    private int screenHeight;
+    public int screenWidth;
+    public int screenHeight;
 
     private GonScreenAdapter() {
     }
