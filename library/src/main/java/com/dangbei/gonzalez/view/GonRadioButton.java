@@ -1,17 +1,19 @@
 package com.dangbei.gonzalez.view;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatRadioButton;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 
+import com.dangbei.gonzalez.IGonTextView;
 import com.dangbei.gonzalez.IGonView;
 import com.dangbei.gonzalez.delegate.GonTextViewDelegate;
 
 /**
  * Created by guoxiaodong on 2017/8/3
  */
-public class GonRadioButton extends AppCompatRadioButton implements IGonView {
+public class GonRadioButton extends AppCompatRadioButton implements IGonView, IGonTextView {
     private GonTextViewDelegate delegate;
 
     public GonRadioButton(Context context) {
@@ -122,12 +124,22 @@ public class GonRadioButton extends AppCompatRadioButton implements IGonView {
     }
 
     @Override
-    public void setHorizontalCompoundDrawablePadding(int padding) {
-        delegate.setHorizontalCompoundDrawablePadding(padding);
+    public void setGonDrawableLeft(Drawable drawable, int padding, int width, int height) {
+        delegate.setGonDrawableLeft(drawable, padding, width, height);
     }
 
     @Override
-    public void setVerticalCompoundDrawablePadding(int padding) {
-        delegate.setVerticalCompoundDrawablePadding(padding);
+    public void setGonDrawableTop(Drawable drawable, int padding, int width, int height) {
+        delegate.setGonDrawableTop(drawable, padding, width, height);
+    }
+
+    @Override
+    public void setGonDrawableRight(Drawable drawable, int padding, int width, int height) {
+        delegate.setGonDrawableRight(drawable, padding, width, height);
+    }
+
+    @Override
+    public void setGonDrawableBottom(Drawable drawable, int padding, int width, int height) {
+        delegate.setGonDrawableBottom(drawable, padding, width, height);
     }
 }

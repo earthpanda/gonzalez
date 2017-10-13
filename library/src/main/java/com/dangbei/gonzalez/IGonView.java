@@ -33,10 +33,4 @@ public interface IGonView {
     void setGonMarginRight(int marginRight);
 
     void setGonMarginBottom(int marginBottom);
-
-    void setGonTextSize(int textSize);
-
-    void setHorizontalCompoundDrawablePadding(int padding);
-
-    void setVerticalCompoundDrawablePadding(int padding);
 }

@@ -118,19 +118,4 @@ public class GonViewGroup extends ViewGroup implements IGonView {
     public void setGonMarginBottom(int marginBottom) {
         delegate.setGonMarginBottom(marginBottom);
     }
-
-    @Override
-    public void setGonTextSize(int textSize) {
-        delegate.setGonTextSize(textSize);
-    }
-
-    @Override
-    public void setHorizontalCompoundDrawablePadding(int padding) {
-        delegate.setHorizontalCompoundDrawablePadding(padding);
-    }
-
-    @Override
-    public void setVerticalCompoundDrawablePadding(int padding) {
-        delegate.setVerticalCompoundDrawablePadding(padding);
-    }
 }

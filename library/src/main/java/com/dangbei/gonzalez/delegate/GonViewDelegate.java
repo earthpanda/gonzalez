@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.dangbei.gonzalez.GonScreenAdapter;
 import com.dangbei.gonzalez.IGonView;
@@ -18,7 +17,7 @@ import com.dangbei.gonzalez.R;
 public class GonViewDelegate implements IGonView {
     static final int GON_NO_VALUE = Integer.MIN_VALUE;
     protected View view;
-    private GonScreenAdapter adapter;
+    protected GonScreenAdapter adapter;
 
     private int gonWidth = GON_NO_VALUE;
     private int gonHeight = GON_NO_VALUE;
@@ -245,36 +244,6 @@ public class GonViewDelegate implements IGonView {
         }
         if (params instanceof ViewGroup.MarginLayoutParams) {
             ((ViewGroup.MarginLayoutParams) params).bottomMargin = adapter.scaleY(marginBottom);
-        }
-    }
-
-    @Override
-    public void setGonTextSize(int textSize) {
-        if (textSize == GON_NO_VALUE) {
-            return;
-        }
-        if (view instanceof TextView) {
-            adapter.scaleTextSize(view, textSize);
-        }
-    }
-
-    @Override
-    public void setHorizontalCompoundDrawablePadding(int padding) {
-        if (padding == GON_NO_VALUE) {
-            return;
-        }
-        if (view instanceof TextView) {
-            ((TextView) view).setCompoundDrawablePadding(adapter.scaleX(padding));
-        }
-    }
-
-    @Override
-    public void setVerticalCompoundDrawablePadding(int padding) {
-        if (padding == GON_NO_VALUE) {
-            return;
-        }
-        if (view instanceof TextView) {
-            ((TextView) view).setCompoundDrawablePadding(adapter.scaleY(padding));
         }
     }
 }

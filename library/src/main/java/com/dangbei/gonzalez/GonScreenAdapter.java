@@ -11,9 +11,9 @@ public class GonScreenAdapter {
     public static final int MATCH = RelativeLayout.LayoutParams.MATCH_PARENT;
     public final int defaultWidth = 1920;
     public final int defaultHeight = 1080;
-    private boolean isReset = false;
     public int screenWidth;
     public int screenHeight;
+    private boolean isReset = false;
 
     private GonScreenAdapter() {
     }
