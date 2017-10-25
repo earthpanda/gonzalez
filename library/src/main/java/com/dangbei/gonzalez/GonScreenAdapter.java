@@ -9,8 +9,8 @@ import android.widget.TextView;
 public class GonScreenAdapter {
     public static final int WRAP = RelativeLayout.LayoutParams.WRAP_CONTENT;
     public static final int MATCH = RelativeLayout.LayoutParams.MATCH_PARENT;
-    public final int defaultWidth = 1920;
-    public final int defaultHeight = 1080;
+    public int defaultWidth;
+    public int defaultHeight;
     public int screenWidth;
     public int screenHeight;
     private boolean isReset = false;
@@ -27,6 +27,8 @@ public class GonScreenAdapter {
             isReset = true;
             screenWidth = displayMetrics.widthPixels;
             screenHeight = displayMetrics.heightPixels == 672 ? 720 : displayMetrics.heightPixels == 1008 ? 1080 : displayMetrics.heightPixels;
+            defaultWidth = screenWidth > screenHeight ? 1920 : 1080;
+            defaultHeight = screenWidth > screenHeight ? 1080 : 1920;
         }
     }
 
