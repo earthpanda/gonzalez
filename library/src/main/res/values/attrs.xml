@@ -351,4 +351,26 @@
         <attr name="gon_layout_marginRight"/>
         <attr name="gon_layout_marginBottom"/>
     </declare-styleable>
+
+    <declare-styleable name="GonEditText">
+        <attr name="gon_layout_width"/>
+        <attr name="gon_layout_height"/>
+
+        <attr name="gon_padding"/>
+        <attr name="gon_paddingLeft"/>
+        <attr name="gon_paddingTop"/>
+        <attr name="gon_paddingRight"/>
+        <attr name="gon_paddingBottom"/>
+
+        <attr name="gon_layout_margin"/>
+        <attr name="gon_layout_marginLeft"/>
+        <attr name="gon_layout_marginTop"/>
+        <attr name="gon_layout_marginRight"/>
+        <attr name="gon_layout_marginBottom"/>
+
+        <attr name="gon_textSize"/>
+        <attr name="gon_drawableWidth"/>
+        <attr name="gon_drawableHeight"/>
+        <attr name="gon_drawablePadding"/>
+    </declare-styleable>
 </resources>
