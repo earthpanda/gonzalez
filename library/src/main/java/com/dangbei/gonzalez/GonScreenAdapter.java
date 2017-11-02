@@ -9,10 +9,10 @@ import android.widget.TextView;
 public class GonScreenAdapter {
     public static final int WRAP = RelativeLayout.LayoutParams.WRAP_CONTENT;
     public static final int MATCH = RelativeLayout.LayoutParams.MATCH_PARENT;
-    public int defaultWidth;
-    public int defaultHeight;
-    public int screenWidth;
-    public int screenHeight;
+    private int defaultWidth;
+    private int defaultHeight;
+    private int screenWidth;
+    private int screenHeight;
     private boolean isReset = false;
 
     private GonScreenAdapter() {
@@ -22,13 +22,41 @@ public class GonScreenAdapter {
         return Holder.instance;
     }
 
+    public int getDefaultWidth() {
+        return defaultWidth;
+    }
+
+    public void setDefaultWidth(int defaultWidth) {
+        this.defaultWidth = defaultWidth;
+    }
+
+    public int getDefaultHeight() {
+        return defaultHeight;
+    }
+
+    public void setDefaultHeight(int defaultHeight) {
+        this.defaultHeight = defaultHeight;
+    }
+
+    public int getScreenWidth() {
+        return screenWidth;
+    }
+
+    public int getScreenHeight() {
+        return screenHeight;
+    }
+
     public void reset(DisplayMetrics displayMetrics) {
         if (!isReset) {
             isReset = true;
             screenWidth = displayMetrics.widthPixels;
             screenHeight = displayMetrics.heightPixels == 672 ? 720 : displayMetrics.heightPixels == 1008 ? 1080 : displayMetrics.heightPixels;
-            defaultWidth = screenWidth > screenHeight ? 1920 : 1080;
-            defaultHeight = screenWidth > screenHeight ? 1080 : 1920;
+            if (defaultWidth == 0) {
+                defaultWidth = screenWidth > screenHeight ? 1920 : 1080;
+            }
+            if (defaultHeight == 0) {
+                defaultHeight = screenWidth > screenHeight ? 1080 : 1920;
+            }
         }
     }
 
