@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion global_compileSdkVersion
-    buildToolsVersion global_buildToolsVersion
     defaultConfig {
         applicationId "com.dangbei.gonzalez.sample"
         minSdkVersion global_minSdkVersion
@@ -19,7 +18,5 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:$global_supportVersion"
-//    compile "com.dangbei:gonzalez:1.0.1-SNAPSHOT"
-    compile project(':library')
+    implementation project(':library')
 }
