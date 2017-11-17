@@ -46,7 +46,7 @@ public class GonScreenAdapter {
         return screenHeight;
     }
 
-    public void reset(DisplayMetrics displayMetrics) {
+    public void init(DisplayMetrics displayMetrics) {
         if (!isReset) {
             isReset = true;
             screenWidth = displayMetrics.widthPixels;
@@ -57,6 +57,17 @@ public class GonScreenAdapter {
             if (defaultHeight == 0) {
                 defaultHeight = screenWidth > screenHeight ? 1080 : 1920;
             }
+        }
+    }
+
+    public void reset(DisplayMetrics displayMetrics) {
+        screenWidth = displayMetrics.widthPixels;
+        screenHeight = displayMetrics.heightPixels == 672 ? 720 : displayMetrics.heightPixels == 1008 ? 1080 : displayMetrics.heightPixels;
+        if (defaultWidth == 0) {
+            defaultWidth = screenWidth > screenHeight ? 1920 : 1080;
+        }
+        if (defaultHeight == 0) {
+            defaultHeight = screenWidth > screenHeight ? 1080 : 1920;
         }
     }
 
