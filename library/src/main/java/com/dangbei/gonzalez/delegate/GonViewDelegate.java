@@ -38,7 +38,7 @@ public class GonViewDelegate implements IGonView {
     }
 
     public void initAttributes(Context context, AttributeSet attrs) {
-        GonScreenAdapter.getInstance().reset(context.getResources().getDisplayMetrics());
+        GonScreenAdapter.getInstance().init(context.getResources().getDisplayMetrics());
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.GonView);
 
