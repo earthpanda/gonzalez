@@ -86,10 +86,28 @@ public class GonViewDelegate implements IGonView {
     }
 
     @Override
+    public int getGonWidth() {
+        return gonWidth;
+    }
+
+    @Override
     public void setGonWidth(int width) {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         if (params != null) {
             setGonWidth(params, width);
+        }
+    }
+
+    @Override
+    public int getGonHeight() {
+        return gonHeight;
+    }
+
+    @Override
+    public void setGonHeight(int height) {
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        if (params != null) {
+            setGonHeight(params, height);
         }
     }
 
@@ -101,14 +119,6 @@ public class GonViewDelegate implements IGonView {
             width = adapter.scaleX(width);
         }
         params.width = width;
-    }
-
-    @Override
-    public void setGonHeight(int height) {
-        ViewGroup.LayoutParams params = view.getLayoutParams();
-        if (params != null) {
-            setGonHeight(params, height);
-        }
     }
 
     @Override
@@ -135,11 +145,21 @@ public class GonViewDelegate implements IGonView {
     }
 
     @Override
+    public int getGonPaddingLeft() {
+        return gonPaddingLeft;
+    }
+
+    @Override
     public void setGonPaddingLeft(int paddingLeft) {
         if (paddingLeft == GON_NO_VALUE) {
             return;
         }
         view.setPadding(adapter.scaleX(paddingLeft), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+    }
+
+    @Override
+    public int getGonPaddingTop() {
+        return gonPaddingTop;
     }
 
     @Override
@@ -151,11 +171,21 @@ public class GonViewDelegate implements IGonView {
     }
 
     @Override
+    public int getGonPaddingRight() {
+        return gonPaddingRight;
+    }
+
+    @Override
     public void setGonPaddingRight(int paddingRight) {
         if (paddingRight == GON_NO_VALUE) {
             return;
         }
         view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), adapter.scaleX(paddingRight), view.getPaddingBottom());
+    }
+
+    @Override
+    public int getGonPaddingBottom() {
+        return gonPaddingBottom;
     }
 
     @Override
@@ -180,10 +210,28 @@ public class GonViewDelegate implements IGonView {
     }
 
     @Override
+    public int getGonMarginLeft() {
+        return gonMarginLeft;
+    }
+
+    @Override
     public void setGonMarginLeft(int marginLeft) {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         if (params != null) {
             setGonMarginLeft(params, marginLeft);
+        }
+    }
+
+    @Override
+    public int getGonMarginTop() {
+        return gonMarginTop;
+    }
+
+    @Override
+    public void setGonMarginTop(int marginTop) {
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        if (params != null) {
+            setGonMarginTop(params, marginTop);
         }
     }
 
@@ -197,10 +245,15 @@ public class GonViewDelegate implements IGonView {
     }
 
     @Override
-    public void setGonMarginTop(int marginTop) {
+    public int getGonMarginRight() {
+        return gonMarginRight;
+    }
+
+    @Override
+    public void setGonMarginRight(int marginRight) {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         if (params != null) {
-            setGonMarginTop(params, marginTop);
+            setGonMarginRight(params, marginRight);
         }
     }
 
@@ -214,10 +267,15 @@ public class GonViewDelegate implements IGonView {
     }
 
     @Override
-    public void setGonMarginRight(int marginRight) {
+    public int getGonMarginBottom() {
+        return gonMarginBottom;
+    }
+
+    @Override
+    public void setGonMarginBottom(int marginBottom) {
         ViewGroup.LayoutParams params = view.getLayoutParams();
         if (params != null) {
-            setGonMarginRight(params, marginRight);
+            setGonMarginBottom(params, marginBottom);
         }
     }
 
@@ -227,14 +285,6 @@ public class GonViewDelegate implements IGonView {
         }
         if (params instanceof ViewGroup.MarginLayoutParams) {
             ((ViewGroup.MarginLayoutParams) params).rightMargin = adapter.scaleX(marginRight);
-        }
-    }
-
-    @Override
-    public void setGonMarginBottom(int marginBottom) {
-        ViewGroup.LayoutParams params = view.getLayoutParams();
-        if (params != null) {
-            setGonMarginBottom(params, marginBottom);
         }
     }
 

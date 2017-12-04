@@ -36,8 +36,28 @@ public class GonRadioGroup extends RadioGroup implements IGonView {
     }
 
     @Override
-    public void setGonSize(int width, int height) {
-        delegate.setGonSize(width, height);
+    public int getGonPaddingTop() {
+        return delegate.getGonPaddingTop();
+    }
+
+    @Override
+    public void setGonPaddingTop(int paddingTop) {
+        delegate.setGonPaddingTop(paddingTop);
+    }
+
+    @Override
+    public int getGonMarginBottom() {
+        return delegate.getGonMarginBottom();
+    }
+
+    @Override
+    public void setGonMarginBottom(int marginBottom) {
+        delegate.setGonMarginBottom(marginBottom);
+    }
+
+    @Override
+    public int getGonWidth() {
+        return delegate.getGonWidth();
     }
 
     @Override
@@ -46,8 +66,78 @@ public class GonRadioGroup extends RadioGroup implements IGonView {
     }
 
     @Override
+    public int getGonHeight() {
+        return delegate.getGonHeight();
+    }
+
+    @Override
     public void setGonHeight(int height) {
         delegate.setGonHeight(height);
+    }
+
+    @Override
+    public int getGonPaddingLeft() {
+        return delegate.getGonPaddingLeft();
+    }
+
+    @Override
+    public void setGonPaddingLeft(int paddingLeft) {
+        delegate.setGonPaddingLeft(paddingLeft);
+    }
+
+    @Override
+    public int getGonPaddingRight() {
+        return delegate.getGonPaddingRight();
+    }
+
+    @Override
+    public void setGonPaddingRight(int paddingRight) {
+        delegate.setGonPaddingRight(paddingRight);
+    }
+
+    @Override
+    public int getGonPaddingBottom() {
+        return delegate.getGonPaddingBottom();
+    }
+
+    @Override
+    public void setGonPaddingBottom(int paddingBottom) {
+        delegate.setGonPaddingBottom(paddingBottom);
+    }
+
+    @Override
+    public int getGonMarginLeft() {
+        return delegate.getGonMarginLeft();
+    }
+
+    @Override
+    public void setGonMarginLeft(int marginLeft) {
+        delegate.setGonMarginLeft(marginLeft);
+    }
+
+    @Override
+    public int getGonMarginTop() {
+        return delegate.getGonMarginTop();
+    }
+
+    @Override
+    public void setGonMarginTop(int marginTop) {
+        delegate.setGonMarginTop(marginTop);
+    }
+
+    @Override
+    public int getGonMarginRight() {
+        return delegate.getGonMarginRight();
+    }
+
+    @Override
+    public void setGonMarginRight(int marginRight) {
+        delegate.setGonPaddingRight(marginRight);
+    }
+
+    @Override
+    public void setGonSize(int width, int height) {
+        delegate.setGonSize(width, height);
     }
 
     @Override
@@ -61,26 +151,6 @@ public class GonRadioGroup extends RadioGroup implements IGonView {
     }
 
     @Override
-    public void setGonPaddingLeft(int paddingLeft) {
-        delegate.setGonPaddingLeft(paddingLeft);
-    }
-
-    @Override
-    public void setGonPaddingTop(int paddingTop) {
-        delegate.setGonPaddingTop(paddingTop);
-    }
-
-    @Override
-    public void setGonPaddingRight(int paddingRight) {
-        delegate.setGonPaddingRight(paddingRight);
-    }
-
-    @Override
-    public void setGonPaddingBottom(int paddingBottom) {
-        delegate.setGonPaddingBottom(paddingBottom);
-    }
-
-    @Override
     public void setGonMargin(int margin) {
         delegate.setGonMargin(margin);
     }
@@ -88,25 +158,5 @@ public class GonRadioGroup extends RadioGroup implements IGonView {
     @Override
     public void setGonMargin(int left, int top, int right, int bottom) {
         delegate.setGonMargin(left, top, right, bottom);
-    }
-
-    @Override
-    public void setGonMarginLeft(int marginLeft) {
-        delegate.setGonMarginLeft(marginLeft);
-    }
-
-    @Override
-    public void setGonMarginTop(int marginTop) {
-        delegate.setGonMarginTop(marginTop);
-    }
-
-    @Override
-    public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
-    }
-
-    @Override
-    public void setGonMarginBottom(int marginBottom) {
-        delegate.setGonMarginBottom(marginBottom);
     }
 }
