@@ -124,6 +124,16 @@ public class GonButton extends AppCompatButton implements IGonView, IGonTextView
     }
 
     @Override
+    public void setGonMaxWidth(int maxWidth) {
+        delegate.setGonMaxWidth(maxWidth);
+    }
+
+    @Override
+    public void setGonMaxHeight(int maxHeight) {
+        delegate.setGonMaxHeight(maxHeight);
+    }
+
+    @Override
     public void setGonDrawableLeft(Drawable drawable, int padding, int width, int height) {
         delegate.setGonDrawableLeft(drawable, padding, width, height);
     }

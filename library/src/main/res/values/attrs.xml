@@ -3,6 +3,9 @@
         <attr name="gon_layout_width" format="integer"/>
         <attr name="gon_layout_height" format="integer"/>
 
+        <attr name="gon_layout_max_width" format="integer"/>
+        <attr name="gon_layout_max_height" format="integer"/>
+
         <attr name="gon_padding" format="integer"/>
         <attr name="gon_paddingLeft" format="integer"/>
         <attr name="gon_paddingTop" format="integer"/>
@@ -46,6 +49,8 @@
         <attr name="gon_drawableWidth"/>
         <attr name="gon_drawableHeight"/>
         <attr name="gon_drawablePadding"/>
+        <attr name="gon_layout_max_width"/>
+        <attr name="gon_layout_max_height"/>
     </declare-styleable>
 
     <declare-styleable name="GonCheckBox">
@@ -68,6 +73,8 @@
         <attr name="gon_drawableWidth"/>
         <attr name="gon_drawableHeight"/>
         <attr name="gon_drawablePadding"/>
+        <attr name="gon_layout_max_width"/>
+        <attr name="gon_layout_max_height"/>
     </declare-styleable>
 
     <declare-styleable name="GonImageButton">
@@ -141,6 +148,8 @@
         <attr name="gon_drawableWidth"/>
         <attr name="gon_drawableHeight"/>
         <attr name="gon_drawablePadding"/>
+        <attr name="gon_layout_max_width"/>
+        <attr name="gon_layout_max_height"/>
     </declare-styleable>
 
     <declare-styleable name="GonViewPager">
@@ -214,6 +223,8 @@
         <attr name="gon_drawableWidth"/>
         <attr name="gon_drawableHeight"/>
         <attr name="gon_drawablePadding"/>
+        <attr name="gon_layout_max_width"/>
+        <attr name="gon_layout_max_height"/>
     </declare-styleable>
 
     <declare-styleable name="GonFrameLayout">
@@ -372,5 +383,7 @@
         <attr name="gon_drawableWidth"/>
         <attr name="gon_drawableHeight"/>
         <attr name="gon_drawablePadding"/>
+        <attr name="gon_layout_max_width"/>
+        <attr name="gon_layout_max_height"/>
     </declare-styleable>
 </resources>

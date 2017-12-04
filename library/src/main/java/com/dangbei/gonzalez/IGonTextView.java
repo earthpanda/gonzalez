@@ -8,6 +8,10 @@ import android.graphics.drawable.Drawable;
 public interface IGonTextView {
     void setGonTextSize(int textSize);
 
+    void setGonMaxWidth(int maxWidth);
+
+    void setGonMaxHeight(int maxHeight);
+
     void setGonDrawableLeft(Drawable drawable, int padding, int width, int height);
 
     void setGonDrawableTop(Drawable drawable, int padding, int width, int height);

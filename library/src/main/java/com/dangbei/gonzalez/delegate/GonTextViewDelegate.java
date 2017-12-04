@@ -23,6 +23,8 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
     private Drawable drawableTop;
     private Drawable drawableRight;
     private Drawable drawableBottom;
+    private int gonMaxWidth;
+    private int gonMaxHeight;
 
     public GonTextViewDelegate(View view) {
         super(view);
@@ -43,6 +45,9 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         drawableTop = typedArray.getDrawable(R.styleable.GonView_android_drawableTop);
         drawableRight = typedArray.getDrawable(R.styleable.GonView_android_drawableRight);
         drawableBottom = typedArray.getDrawable(R.styleable.GonView_android_drawableBottom);
+
+        gonMaxWidth = typedArray.getInt(R.styleable.GonView_gon_layout_max_width, GON_NO_VALUE);
+        gonMaxHeight = typedArray.getInt(R.styleable.GonView_gon_layout_max_height, GON_NO_VALUE);
 
         typedArray.recycle();
     }
@@ -65,6 +70,8 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
             if (drawableBottom != null) {
                 setGonDrawableBottom(drawableBottom, drawablePadding, drawableWidth, drawableHeight);
             }
+            setGonMaxWidth(gonMaxWidth);
+            setGonMaxHeight(gonMaxHeight);
         }
     }
 
@@ -75,6 +82,26 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         }
         if (view instanceof TextView) {
             adapter.scaleTextSize(view, textSize);
+        }
+    }
+
+    @Override
+    public void setGonMaxWidth(int maxWidth) {
+        if (maxWidth == GON_NO_VALUE) {
+            return;
+        }
+        if (view instanceof TextView) {
+            ((TextView) view).setMaxWidth(adapter.scaleX(maxWidth));
+        }
+    }
+
+    @Override
+    public void setGonMaxHeight(int maxHeight) {
+        if (maxHeight == GON_NO_VALUE) {
+            return;
+        }
+        if (view instanceof TextView) {
+            ((TextView) view).setMaxHeight(adapter.scaleY(maxHeight));
         }
     }
 
