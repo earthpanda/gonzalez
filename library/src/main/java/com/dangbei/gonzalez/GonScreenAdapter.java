@@ -42,15 +42,27 @@ public class GonScreenAdapter {
         return screenWidth;
     }
 
+    public void setScreenWidth(int screenWidth) {
+        this.screenWidth = screenWidth;
+    }
+
     public int getScreenHeight() {
         return screenHeight;
+    }
+
+    public void setScreenHeight(int screenHeight) {
+        this.screenHeight = screenHeight;
     }
 
     public void init(DisplayMetrics displayMetrics) {
         if (!isReset) {
             isReset = true;
-            screenWidth = displayMetrics.widthPixels;
-            screenHeight = displayMetrics.heightPixels == 672 ? 720 : displayMetrics.heightPixels == 1008 ? 1080 : displayMetrics.heightPixels;
+            if (screenWidth == 0) {
+                screenWidth = displayMetrics.widthPixels;
+            }
+            if (screenHeight == 0) {
+                screenHeight = displayMetrics.heightPixels == 672 ? 720 : displayMetrics.heightPixels == 1008 ? 1080 : displayMetrics.heightPixels;
+            }
             if (defaultWidth == 0) {
                 defaultWidth = screenWidth > screenHeight ? 1920 : 1080;
             }
@@ -61,8 +73,12 @@ public class GonScreenAdapter {
     }
 
     public void reset(DisplayMetrics displayMetrics) {
-        screenWidth = displayMetrics.widthPixels;
-        screenHeight = displayMetrics.heightPixels == 672 ? 720 : displayMetrics.heightPixels == 1008 ? 1080 : displayMetrics.heightPixels;
+        if (screenWidth == 0) {
+            screenWidth = displayMetrics.widthPixels;
+        }
+        if (screenHeight == 0) {
+            screenHeight = displayMetrics.heightPixels == 672 ? 720 : displayMetrics.heightPixels == 1008 ? 1080 : displayMetrics.heightPixels;
+        }
         if (defaultWidth == 0) {
             defaultWidth = screenWidth > screenHeight ? 1920 : 1080;
         }
