@@ -3,6 +3,7 @@ package com.dangbei.gonzalez;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -121,6 +122,28 @@ public class GonScreenAdapter {
         }
 
         return scaleY;
+    }
+
+    /**
+     * 控件适配(动态添加的控件要先自己添加LayoutParams)
+     */
+    public void scaleView(View v, int w, int h, int l, int t, int r, int b) {
+        if (WRAP != w && MATCH != w) {
+            w = scaleX(w);
+        }
+        if (WRAP != h && MATCH != h) {
+            h = scaleY(h);
+        }
+        l = scaleX(l);
+        t = scaleY(t);
+        r = scaleX(r);
+        b = scaleY(b);
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+        if (params != null) {
+            params.width = w;
+            params.height = h;
+            params.setMargins(l, t, r, b);
+        }
     }
 
     private static class Holder {
