@@ -112,9 +112,11 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleX(padding));
+            ((TextView) view).setCompoundDrawables(drawable, null, null, null);
         }
-        drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
-        ((TextView) view).setCompoundDrawables(drawable, null, null, null);
+        if (drawable != null) {
+            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
+        }
     }
 
     @Override
@@ -124,9 +126,11 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleY(padding));
+            ((TextView) view).setCompoundDrawables(null, drawable, null, null);
         }
-        drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
-        ((TextView) view).setCompoundDrawables(null, drawable, null, null);
+        if (drawable != null) {
+            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
+        }
     }
 
     @Override
@@ -136,9 +140,11 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleX(padding));
+            ((TextView) view).setCompoundDrawables(null, null, drawable, null);
         }
-        drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
-        ((TextView) view).setCompoundDrawables(null, null, drawable, null);
+        if (drawable != null) {
+            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
+        }
     }
 
     @Override
@@ -148,8 +154,10 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleY(padding));
+            ((TextView) view).setCompoundDrawables(null, null, null, drawable);
         }
-        drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
-        ((TextView) view).setCompoundDrawables(null, null, null, drawable);
+        if (drawable != null) {
+            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
+        }
     }
 }
