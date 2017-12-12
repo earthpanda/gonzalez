@@ -110,12 +110,12 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         if (padding == GON_NO_VALUE || width == GON_NO_VALUE || height == GON_NO_VALUE) {
             return;
         }
+        if (drawable != null) {
+            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
+        }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleX(padding));
             ((TextView) view).setCompoundDrawables(drawable, null, null, null);
-        }
-        if (drawable != null) {
-            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
         }
     }
 
@@ -124,12 +124,12 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         if (padding == GON_NO_VALUE || width == GON_NO_VALUE || height == GON_NO_VALUE) {
             return;
         }
+        if (drawable != null) {
+            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
+        }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleY(padding));
             ((TextView) view).setCompoundDrawables(null, drawable, null, null);
-        }
-        if (drawable != null) {
-            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
         }
     }
 
@@ -138,12 +138,12 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         if (padding == GON_NO_VALUE || width == GON_NO_VALUE || height == GON_NO_VALUE) {
             return;
         }
+        if (drawable != null) {
+            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
+        }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleX(padding));
             ((TextView) view).setCompoundDrawables(null, null, drawable, null);
-        }
-        if (drawable != null) {
-            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
         }
     }
 
@@ -152,12 +152,12 @@ public class GonTextViewDelegate extends GonViewDelegate implements IGonTextView
         if (padding == GON_NO_VALUE || width == GON_NO_VALUE || height == GON_NO_VALUE) {
             return;
         }
+        if (drawable != null) {
+            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
+        }
         if (view instanceof TextView) {
             ((TextView) view).setCompoundDrawablePadding(adapter.scaleY(padding));
             ((TextView) view).setCompoundDrawables(null, null, null, drawable);
-        }
-        if (drawable != null) {
-            drawable.setBounds(0, 0, adapter.scaleX(width), adapter.scaleY(height));
         }
     }
 }
