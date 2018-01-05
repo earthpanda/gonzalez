@@ -1,6 +1,9 @@
 package com.dangbei.gonzalez.view;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -27,6 +30,13 @@ public class GonProgressBar extends ProgressBar implements IGonView {
 
     public GonProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
+        delegate.initAttributes(context, attrs);
+    }
+
+    @TargetApi(21)
+    public GonProgressBar(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
         init();
         delegate.initAttributes(context, attrs);
     }
