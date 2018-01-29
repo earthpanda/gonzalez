@@ -132,7 +132,7 @@ public class GonImageButton extends AppCompatImageButton implements IGonView {
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     @Override

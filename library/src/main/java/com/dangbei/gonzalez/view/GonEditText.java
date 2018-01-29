@@ -185,7 +185,7 @@ public class GonEditText extends AppCompatEditText implements IGonView, IGonText
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     @Override

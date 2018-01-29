@@ -165,7 +165,7 @@ public class GonButton extends AppCompatButton implements IGonView, IGonTextView
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     @Override

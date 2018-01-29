@@ -171,7 +171,7 @@ public class GonViewGroup extends ViewGroup implements IGonView {
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     @Override

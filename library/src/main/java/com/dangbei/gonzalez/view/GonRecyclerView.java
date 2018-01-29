@@ -128,7 +128,7 @@ public class GonRecyclerView extends RecyclerView implements IGonView {
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     private void init() {

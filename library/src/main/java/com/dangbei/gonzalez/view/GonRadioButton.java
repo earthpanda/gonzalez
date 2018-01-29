@@ -185,7 +185,7 @@ public class GonRadioButton extends AppCompatRadioButton implements IGonView, IG
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     @Override

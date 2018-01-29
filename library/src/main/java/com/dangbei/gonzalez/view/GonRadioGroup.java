@@ -132,7 +132,7 @@ public class GonRadioGroup extends RadioGroup implements IGonView {
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     @Override

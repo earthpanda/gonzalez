@@ -163,7 +163,7 @@ public class GonHorizontalScrollView extends HorizontalScrollView implements IGo
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     @Override

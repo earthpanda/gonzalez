@@ -158,7 +158,7 @@ public class GonSeekBar extends AppCompatSeekBar implements IGonView {
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 
     @Override

@@ -173,6 +173,6 @@ public class GonLinearLayout extends LinearLayout implements IGonView {
 
     @Override
     public void setGonMarginRight(int marginRight) {
-        delegate.setGonPaddingRight(marginRight);
+        delegate.setGonMarginRight(marginRight);
     }
 }
