@@ -1,30 +1,43 @@
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.dangbei.gonzalez.layout.GonRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.dangbei.gonzalez.view.GonCheckBox
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#00f"
+        app:gon_layout_height="300"
+        app:gon_layout_margin="100"
+        app:gon_layout_width="300"/>
 
-    <com.dangbei.gonzalez.GonTextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            app:gon_layout_width="200"
-            app:gon_layout_height="200"
-            android:background="#ff0"/>
+    <com.dangbei.gonzalez.view.GonTextView
+        android:id="@+id/gtv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff0"
+        android:drawableTop="@mipmap/ic_launcher_round"
+        android:gravity="center_horizontal"
+        android:text="ABC"
+        android:textColor="#000"
+        app:gon_drawableHeight="80"
+        app:gon_drawablePadding="120"
+        app:gon_drawableWidth="80"
+        app:gon_layout_height="500"
+        app:gon_layout_marginLeft="400"
+        app:gon_layout_marginTop="200"
+        app:gon_layout_width="500"
+        app:gon_paddingTop="50"
+        app:gon_textSize="70"/>
 
-    <android.support.percent.PercentFrameLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="#f0f"
-            app:layout_marginTopPercent="5%"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="20%"/>
-
-    <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true"
-            android:background="#f0f"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="70%"/>
-</RelativeLayout>
+    <com.dangbei.gonzalez.layout.GonRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/gtv"
+        android:layout_toEndOf="@id/gtv"
+        android:layout_toRightOf="@id/gtv"
+        android:background="#f0f"
+        app:gon_layout_height="200"
+        app:gon_layout_marginLeft="200"/>
+</com.dangbei.gonzalez.layout.GonRelativeLayout>
