@@ -1,15 +1,18 @@
+
 *.iml
 .gradle
-.idea
 /local.properties
-/.idea/workspace.xml
 /.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 
+#settings.gradle
 #gradle.properties
+ajcore*
 # Built application files
 *.apk
 *.ap_
@@ -35,3 +38,10 @@ proguard/
 # Log Files
 *.log
 .idea/
+
+*.wjignore
+
+#gradle.properties
+jiagu360.properties
+# Built application files
+>>>>>>> develop
