@@ -11,8 +11,10 @@ Add it in your root build.gradle at the end of repositories:
 		}
 	}
   
-#step2
+# step2
+
 current version is v1.0
+</br>
 dependencies {
 	        compile 'com.github.earthpanda:gonzalez:vx.x'
 }
